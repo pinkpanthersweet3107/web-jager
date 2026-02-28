@@ -8,20 +8,24 @@
         /* GIAO DIỆN CHUNG */
         body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: white; text-align: center; margin: 0; padding: 0; }
         
-        /* ĐỔI NỀN THÀNH MÀU NÂU VÀ CHỮ THÀNH MÀU ĐỎ */
+        /* HEADER ÉP TRÀN VIỀN 100% TUYỆT ĐỐI */
         .header { 
-            background-color: #4b2c20; /* Màu nâu gỗ đậm */
-            padding: 30px 20px; 
-            border-bottom: 3px solid #8B0000; /* Viền đỏ đậm ngăn cách */
-        }
-        .header h1 { 
-            color: #cc0000; /* Màu đỏ đậm nổi bật */
+            width: 100vw; /* Chiếm trọn 100% chiều ngang màn hình */
+            background-color: #1a1a1a; 
+            padding: 0; 
             margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Đổ bóng để chữ đỏ dễ đọc trên nền nâu */
+            border-bottom: 3px solid #8B0000; 
+            line-height: 0; /* Xóa khoảng trống thừa bên dưới ảnh */
         }
-        .header p { color: #fdfdfd; margin-top: 10px; font-style: italic; }
+        .header img {
+            width: 100vw; /* Bắt buộc hình ảnh giãn đầy 100% chiều ngang */
+            max-width: 100vw; /* Ép không cho giới hạn kích thước */
+            height: auto; 
+            display: block; 
+            object-fit: cover; /* Lấp đầy khung hình không chừa khe hở */
+            margin: 0; 
+            padding: 0;
+        }
         
         /* KHU VỰC SẢN PHẨM Ở TRANG CHỦ */
         .product-container { display: flex; justify-content: center; gap: 20px; padding: 20px; flex-wrap: wrap; }
@@ -55,8 +59,7 @@
 <body>
 
     <div class="header">
-        <h1>JÄGERMEISTER & CIGARS LONG XUYÊN</h1>
-        <p>Giao hàng hoả tốc tận nơi</p>
+        <img src="banner.png" alt="Jägermeister & Cigars Banner">
     </div>
 
     <div id="trang-chu">
