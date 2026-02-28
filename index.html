@@ -7,7 +7,21 @@
     <style>
         /* GIAO DIỆN CHUNG */
         body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: white; text-align: center; margin: 0; padding: 0; }
-        .header { background-color: #ff5722; padding: 20px; }
+        
+        /* ĐỔI NỀN THÀNH MÀU NÂU VÀ CHỮ THÀNH MÀU ĐỎ */
+        .header { 
+            background-color: #4b2c20; /* Màu nâu gỗ đậm */
+            padding: 30px 20px; 
+            border-bottom: 3px solid #8B0000; /* Viền đỏ đậm ngăn cách */
+        }
+        .header h1 { 
+            color: #cc0000; /* Màu đỏ đậm nổi bật */
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Đổ bóng để chữ đỏ dễ đọc trên nền nâu */
+        }
+        .header p { color: #fdfdfd; margin-top: 10px; font-style: italic; }
         
         /* KHU VỰC SẢN PHẨM Ở TRANG CHỦ */
         .product-container { display: flex; justify-content: center; gap: 20px; padding: 20px; flex-wrap: wrap; }
