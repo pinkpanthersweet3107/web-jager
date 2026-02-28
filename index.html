@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jägermeister & Cigars Long Xuyên</title>
+    <style>
+        /* GIAO DIỆN CHUNG */
+        body { font-family: Arial, sans-serif; background-color: #1a1a1a; color: white; text-align: center; margin: 0; padding: 0; }
+        .header { background-color: #ff5722; padding: 20px; }
+        
+        /* KHU VỰC SẢN PHẨM Ở TRANG CHỦ */
+        .product-container { display: flex; justify-content: center; gap: 20px; padding: 20px; flex-wrap: wrap; }
+        .product-card { 
+            background-color: #333; padding: 15px; border-radius: 10px; width: 300px; 
+            cursor: pointer; transition: transform 0.2s; 
+        }
+        .product-card:hover { transform: scale(1.02); background-color: #444; }
+        .product-card img { width: 100%; border-radius: 5px; margin-bottom: 10px; }
+        .product-card h3 { margin: 0; font-size: 22px; } 
+
+        /* GIAO DIỆN TRANG CHI TIẾT SẢN PHẨM */
+        .detail-page { display: none; padding: 40px 20px; max-width: 600px; margin: 0 auto; text-align: left; }
+        .detail-page img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
+        .detail-page h2 { font-size: 30px; margin-top: 0; color: #ff5722;}
+        .detail-price { font-size: 24px; font-weight: bold; color: #4CAF50; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #444;}
+        .detail-desc { font-size: 16px; line-height: 1.6; color: #ddd; margin-bottom: 30px; }
+        
+        /* CÁC NÚT BẤM */
+        .btn-zalo { background-color: #0068ff; color: white; padding: 15px 30px; text-decoration: none; font-size: 18px; border-radius: 5px; display: inline-block; margin: 20px 0; font-weight: bold; text-align: center; }
+        .btn-back { background-color: #555; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-bottom: 20px; }
+        .btn-back:hover { background-color: #777; }
+        .btn-order-now { background-color: #ff5722; color: white; padding: 15px; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; width: 100%; font-weight: bold; margin-bottom: 10px;}
+
+        /* FORM MUA HÀNG */
+        .order-form { background-color: #222; padding: 30px; margin: 20px auto; width: 80%; max-width: 500px; border-radius: 10px; text-align: left; }
+        input, select, button.btn-submit { width: 100%; padding: 12px; margin: 10px 0; box-sizing: border-box; border-radius: 5px; border: none; font-size: 16px; }
+        .btn-submit { background-color: #4CAF50; color: white; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>JÄGERMEISTER & CIGARS LONG XUYÊN</h1>
+        <p>Giao hàng hoả tốc tận nơi</p>
+    </div>
+
+    <div id="trang-chu">
+        <h2>SẢN PHẨM CỦA CHÚNG TÔI</h2>
+        <div class="product-container">
+            <div class="product-card" onclick="chuyenTrang('trang-jager')">
+                <img src="jager.png" alt="Jägermeister">
+                <h3>Jägermeister</h3>
+            </div>
+
+            <div class="product-card" onclick="chuyenTrang('trang-cigars')">
+                <img src="cigars.jpg" alt="Cigars">
+                <h3>Cigars</h3>
+            </div>
+        </div>
+
+        <hr style="border-color: #444; width: 80%; margin: 30px auto;">
+
+        <h2>CÁCH 1: CHỐT ĐƠN NHANH QUA ZALO</h2>
+        <a href="https://zalo.me/0378967834" class="btn-zalo" target="_blank">💬 CHAT ZALO MUA NGAY</a>
+
+        <h2 style="margin-top: 40px;" id="khu-vuc-form">CÁCH 2: ĐIỀN THÔNG TIN NHẬN HÀNG</h2>
+        <div class="order-form">
+            <form action="https://formspree.io/f/xlgwvzyz" method="POST">
+                <input type="text" name="HoTen" placeholder="Tên của bạn" required>
+                <input type="tel" name="SoDienThoai" placeholder="Số điện thoại" required>
+                <input type="text" name="DiaChi" placeholder="Địa chỉ giao hàng" required>
+                <select name="MonHang">
+                    <option value="Jager 1L">Jägermeister 1 Lít</option>
+                    <option value="Jager 1L">Jägermeister 700ml</option>
+                </select>
+                <button type="submit" class="btn-submit">GỬI ĐƠN HÀNG CHO TUI</button>
+            </form>
+        </div>
+    </div>
+
+
+    <div id="trang-jager" class="detail-page">
+        <button class="btn-back" onclick="chuyenTrang('trang-chu')">⬅ Quay lại Trang chủ</button>
+        
+        <img src="jager1.png" alt="Jägermeister">
+        <h2>Jägermeister 1 Lít</h2>
+        <div class="detail-price">Giá: 680.000 VND</div>
+        <h2>Jägermeister 700ml</h2>
+        <div class="detail-price">Giá: 580.000 VND</div>
+
+        <button class="btn-order-now" onclick="chuyenTrang('trang-chu'); window.location.href='#khu-vuc-form';">ĐIỀN THÔNG TIN MUA NGAY</button>
+        
+        <div class="detail-desc">
+            <strong>Thông tin sản phẩm:</strong><br><br>
+            <img src="jager2.png" alt="Jägermeister">
+            <h2>Jägermeister – Bản Giao Hưởng Thảo Mộc Từ Đức</h2>
+            Đừng chỉ uống rượu, hãy thưởng thức một huyền thoại. Với công thức bí mật từ 56 loại thảo mộc, rễ cây và gia vị quý hiếm, 
+            Jägermeister mang đến một tầng hương vị phức hợp: từ chút cay nồng của gừng, ngọt ngào của quế đến sự thanh mát của cam quýt. <br><br>
+
+            <b>Jägermeister:</b> 56 Loại Thảo Mộc – 1 Trải Nghiệm Đỉnh Cao.<br><br>
+
+            Khám phá dòng rượu thảo mộc lừng danh thế giới ngay tại Long Xuyên.<br><br>
+
+            <b>Hương vị:</b> Đậm đà, êm ái, hậu vị ngọt nhẹ đặc trưng.<br><br>
+
+             <img src="jager3.png" alt="Jägermeister">
+
+            ✅ <b>Cam kết:</b> Hàng chính hãng 100% – Nói không với hàng kém chất lượng.<br><br>
+
+            🚀 <b>Ship hỏa tốc:</b> Bạn ở nội ô Long Xuyên? Đừng lo "đứt quãng" cuộc vui, chúng tôi giao hàng ngay lập tức!<br><br>
+
+            ❄️ <b>Gợi ý:</b> Làm một shot ướp lạnh để cảm nhận độ "phê" tức thì.<br><br>
+
+            <b>2001</b><br><br>
+        </div>
+        
+    </div>
+
+
+    <div id="trang-cigars" class="detail-page">
+        <button class="btn-back" onclick="chuyenTrang('trang-chu')">⬅ Quay lại Trang chủ</button>
+        
+        <img src="cigars1.jpg" alt="Cigars">
+        <h2>Cigars Thượng Hạng – Đẳng Cấp Trong Từng Làn Khói</h2>
+        <div class="detail-price" style="color: #0068ff;">Giá: Liên hệ & Tư vấn</div>
+        <a href="https://zalo.me/0378967834" class="btn-zalo" target="_blank" style="width: 100%; box-sizing: border-box; margin: 0;">💬 NHẮN ZALO ĐỂ XEM MẪU & GIÁ</a>
+        <div class="detail-desc">
+            <strong>Thông tin sản phẩm:</strong><br><br>
+            <img src="cigars2.jpg" alt="Cigars">
+            Mỗi điếu Cigar là một câu chuyện về vùng đất, khí hậu và đôi bàn tay nghệ nhân. <br><br>
+            Hiểu rằng mỗi quý khách đều có một "gu" thưởng thức riêng biệt, chúng tôi mang đến bộ sưu tập đa dạng từ các thương hiệu lừng danh thế giới.<br><br>
+            <b>Tư vấn chuyên sâu:</b> Hỗ trợ lựa chọn theo kích cỡ (Ring gauge), độ nặng và hương vị phù hợp với khẩu vị hoặc mục đích biếu tặng.<br><br>
+            <b>Thực tế & Minh bạch:</b> Cung cấp hình ảnh thực tế từng điếu/hộp đang có sẵn để quý khách yên tâm tuyệt đối về chất lượng.<br><br>
+            <img src="cigars3.jpg" alt="Cigars">
+            <b>2001</b><br><br>
+        </div>
+
+    </div>
+
+    <script>
+        function chuyenTrang(trangMuonMo) {
+            // Giấu tất cả các trang đi
+            document.getElementById('trang-chu').style.display = 'none';
+            document.getElementById('trang-jager').style.display = 'none';
+            document.getElementById('trang-cigars').style.display = 'none';
+
+            // Mở đúng trang được yêu cầu
+            document.getElementById(trangMuonMo).style.display = 'block';
+            
+            // Cuộn lên đầu trang cho mượt
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+</body>
+</html>
